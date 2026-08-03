@@ -1,5 +1,19 @@
+.top-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgrey;
+  height: 70px;
+  width: 100%;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  margin-left: 15px;
+  padding-right: 10px;
+}
+
 body {
-  margin: 25px;
   background-color: rgb(0, 0, 0);
   font-family: arial, sans-serif;
   font-size: 14px;
@@ -11,4 +25,15 @@ h1 {
   margin-top: 5px;
   color: white;
   font-family: 'Times New Roman', Times, serif
+}
+
+footer {
+  color: white;
+  font-size: 8px;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  padding-top: 25%;
+  padding-right: 10px;
+  position: absolute;
+  right: 0;
 }
