@@ -17,28 +17,87 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 70px;
+  height: 100px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #222222;
-  backdrop-filter: blur(10px);
+  justify-content: left;
+  background: rgba(0, 0, 0, 0.5);
   z-index: 100;
 }
 
 .nav-bar {
   display: flex;
-  gap: 25px;
+  padding-left: 40px;
+  padding-top: 25px;
+  gap: 70px;
 }
 
 .nav-bar a {
+  padding-left: 30px;
+  padding-top: 15px;
   color: white;
+  font-family: "Orbitron", sans-serif;
   text-decoration: none;
   transition: color 0.4s ease;
 }
 
 .nav-bar a:hover {
   color: #780606;
+}
+
+.quantacat-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.quantacat-dropdown-label {
+  display: block;
+  padding-top: 5px;
+  text-align: center;
+  line-height: 1.5;
+  cursor: pointer;
+  font-family: "Wallpoet", sans-serif;
+}
+
+.dropdown-arrow {
+  position: absolute;
+  transform: translate(30px, -12px);
+}
+
+.quantacat-dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: -25px;
+  background-color: #000;
+  min-width: 180px;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+/* I didn't know you could do multiple lmaooo */
+.quantacat-dropdown:hover .quantacat-dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.quantacat-dropdown-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.quantacat-dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.quantacat-dropdown-content a:hover {
+  background-color: #333;
 }
 
 .utbe-main {
