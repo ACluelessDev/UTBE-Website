@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #000;
+    background: #000000;
     color: white;
     font-family: Arial, sans-serif;
     font-size: 14px;
@@ -152,6 +152,7 @@ body {
     color: red;
 }
 
+/* Scroll down indicator animation courtesy of: https://youtu.be/UaYXrbNDqXM?si=m_cab6FTq2M2KbcC" */
 .scroll-down-indicator {
     position: absolute;
     bottom: 120px;
@@ -209,7 +210,6 @@ body {
     }
 }
 
-
 .utbe-what-container {
     position: relative;
     width: 100%;
@@ -218,7 +218,6 @@ body {
     background-color: #16161D;
     transform: translate(0%, -10%);
 }
-
 
 .utbe-what-text {
     position: absolute;
@@ -235,8 +234,8 @@ body {
 
 .utbe-what-portrait {
     position: absolute;
-    top: 200px;
-    left: 5%;
+    top: 135px;
+    left: 6%;
     display: flex;
     z-index: 2;
     opacity: 0;
@@ -267,6 +266,334 @@ body {
         transform: translateX(0);
         opacity: 1;
     }
+}
+
+.utbe-what-background-number {
+    position: absolute;
+    left: -20px;
+    bottom: -100px;
+    z-index: 0;
+    font-family: "Wallpoet", sans-serif;
+    font-size: 500px;
+    color: rgba(255, 255, 255, 0.025);
+    pointer-events: none;
+    user-select: none;
+}
+
+.utbe-what-bottom-label {
+    position: absolute;
+    top: 850px;
+    left: 18%;
+    z-index: 3;
+    font-family: "Orbitron", sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.utbe-what-divider {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    width: 1px;
+    height: 700px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.15) 80%, transparent);
+    z-index: 3;
+}
+
+.utbe-what-right {
+    position: absolute;
+    top: 355px;
+    left: 55%;
+    width: 35%;
+    z-index: 3;
+}
+
+.utbe-what-description {
+    font-family: "Orbitron", sans-serif;
+    font-size: 17px;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.utbe-what-description p {
+    margin-bottom: 40px;
+}
+
+.utbe-what-description span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.utbe-what-description.is-visible span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.utbe-who-container {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    overflow: hidden;
+    background-color: #05050a;
+    transform: translate(0%, -10%);
+}
+
+.utbe-who-text {
+    position: absolute;
+    top: 100px;
+    left: 20%;
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.utbe-who-text.is-visible {
+    animation: whoText-Animation 1.2s ease-in-out forwards;
+}
+
+.utbe-who-portrait {
+    position: absolute;
+    top: 200px;
+    left: 5%;
+    display: flex;
+    z-index: 2;
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.utbe-who-portrait.is-visible {
+    animation: whoPortrait-Animation 1.2s 0.2s ease-in-out forwards;
+}
+
+@keyframes whoText-Animation {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes whoPortrait-Animation {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.utbe-who-background-number {
+    position: absolute;
+    left: -20px;
+    bottom: -100px;
+    z-index: 0;
+    font-family: "Wallpoet", sans-serif;
+    font-size: 500px;
+    color: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+    user-select: none;
+}
+
+.utbe-who-background {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    width: 1px;
+    height: 700px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.15) 80%, transparent);
+    z-index: 3;
+}
+
+.utbe-who-bottom-label {
+    position: absolute;
+    top: 850px;
+    left: 15%;
+    z-index: 3;
+    font-family: "Orbitron", sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.utbe-who-divider {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    width: 1px;
+    height: 700px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.15) 80%, transparent);
+    z-index: 3;
+}
+
+.utbe-who-right {
+    position: absolute;
+    top: 290px;
+    left: 55%;
+    width: 35%;
+    z-index: 3;
+}
+
+.utbe-who-description {
+    font-family: "Orbitron", sans-serif;
+    font-size: 17px;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.utbe-who-description p {
+    margin-bottom: 40px;
+}
+
+.utbe-who-description span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.utbe-who-description.is-visible span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.utbe-why-container {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    overflow: hidden;
+    background-color: #141414;
+    transform: translate(0%, -10%);
+}
+
+.utbe-why-text {
+    position: absolute;
+    top: 100px;
+    left: 20%;
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.utbe-why-text.is-visible {
+    animation: whyText-Animation 1.2s ease-in-out forwards;
+}
+
+.utbe-why-portrait {
+    position: absolute;
+    top: 220px;
+    left: 12.5%;
+    display: flex;
+    z-index: 2;
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.utbe-why-portrait.is-visible {
+    animation: whyPortrait-Animation 1.2s 0.2s ease-in-out forwards;
+}
+
+@keyframes whyText-Animation {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes whyPortrait-Animation {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.utbe-why-background-number {
+    position: absolute;
+    left: -20px;
+    bottom: -100px;
+    z-index: 0;
+    font-family: "Wallpoet", sans-serif;
+    font-size: 500px;
+    color: rgba(255, 255, 255, 0.025);
+    pointer-events: none;
+    user-select: none;
+}
+
+.utbe-why-background {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    width: 1px;
+    height: 700px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.15) 80%, transparent);
+    z-index: 3;
+}
+
+.utbe-why-bottom-label {
+    position: absolute;
+    top: 850px;
+    left: 15%;
+    z-index: 3;
+    font-family: "Orbitron", sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.utbe-why-divider {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    width: 1px;
+    height: 700px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.15) 80%, transparent);
+    z-index: 3;
+}
+
+.utbe-why-right {
+    position: absolute;
+    top: 370px;
+    left: 55%;
+    width: 35%;
+    z-index: 3;
+}
+
+.utbe-why-description {
+    font-family: "Orbitron", sans-serif;
+    font-size: 17px;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.utbe-why-description p {
+    margin-bottom: 40px;
+}
+
+.utbe-why-description span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.utbe-why-description.is-visible span {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 h1 {
@@ -371,5 +698,76 @@ footer {
 
     .utbe-what-portrait img {
         max-width: 90vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .utbe-what-container {
+        height: 1200px;
+    }
+
+    .utbe-what-background-number {
+        font-size: 300px;
+        left: -20px;
+        bottom: -40px;
+    }
+
+    .utbe-what-divider {
+        top: 800px;
+        left: 15%;
+        width: 70%;
+        height: 1px;
+        background: linear-gradient(
+                to right,
+                transparent,
+                rgba(255, 255, 255, 0.15),
+                transparent
+        );
+    }
+
+    .utbe-what-right {
+        top: 850px;
+        left: 10%;
+        width: 80%;
+    }
+
+    .utbe-what-description {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .utbe-what-bottom-label {
+        top: 750px;
+        left: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .utbe-what-container {
+        height: 1150px;
+    }
+
+    .utbe-what-background-number {
+        font-size: 220px;
+        bottom: -20px;
+    }
+
+    .utbe-what-divider {
+        top: 720px;
+    }
+
+    .utbe-what-right {
+        top: 770px;
+        left: 10%;
+        width: 80%;
+    }
+
+    .utbe-what-description {
+        font-size: 12px;
+    }
+
+    .utbe-what-bottom-label {
+        top: 680px;
+        font-size: 9px;
     }
 }
