@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #15151D;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: left;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.topbar-hide {
+    transform: translateY(-100%);
+}
+
+.navbar {
+    display: flex;
+    padding-left: 40px;
+    padding-top: 25px;
+    gap: 70px;
+}
+
+.navbar a {
+    padding-left: 30px;
+    padding-top: 15px;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+.navbar a:hover {
+    color: #780606;
+}
+
+.navbar-return {
+    position: fixed;
+    right: 50px;
+}
+
+.quantacat-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.quantacat-dropdown-label {
+    display: block;
+    padding-top: 5px;
+    text-align: center;
+    line-height: 1.5;
+    cursor: pointer;
+    font-family: "Wallpoet", sans-serif;
+}
+
+.dropdown-arrow {
+    position: absolute;
+    transform: translate(30px, -12px);
+}
+
+.quantacat-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: -25px;
+    background-color: #000;
+    min-width: 180px;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.quantacat-dropdown:hover .quantacat-dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.quantacat-dropdown-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.quantacat-dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.quantacat-dropdown-content a:hover {
+    background-color: #333;
+    color: #2D68C4;
+}
+
+main {
+    padding-top: 100px;
+}
+
+.what-first-container {
+    position: relative;
+    display: flex;
+    width: 80%;
+    height: 500px;
+    margin: 150px auto 0;
+    background: #292A2D;
+    border-radius: 50px;
+    border: 2px solid #48494A;
+    z-index: 0;
+}
+
+.what-first-image {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    display: flex;
+    z-index: 1;
+}
+
+.what-first-description {
+    position: absolute;
+    top: 150px;
+    right: 120px;
+    width: 35%;
+    z-index: 1;
+    font-family: "Orbitron", sans-serif;
+    font-size: 17px;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.what-first-description p {
+    margin-bottom: 40px;
+}
+
+.what-second-container {
+    position: relative;
+    display: flex;
+    width: 80%;
+    height: 500px;
+    margin: 250px auto 0;
+    background: #292A2D;
+    border-radius: 50px;
+    border: 2px solid #48494A;
+    z-index: 0;
+}
+
+.what-second-image {
+    position: absolute;
+    top: 50px;
+    right: 70px;
+    display: flex;
+    z-index: 1;
+}
+
+.what-second-description {
+    position: absolute;
+    top: 170px;
+    left: 100px;
+    width: 35%;
+    z-index: 1;
+    font-family: "Orbitron", sans-serif;
+    font-size: 17px;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.what-second-description p {
+    margin-bottom: 40px;
+}
+
+.what-third-container {
+    position: relative;
+    display: flex;
+    width: 80%;
+    height: 500px;
+    margin: 250px auto 0;
+    background: #292A2D;
+    border-radius: 50px;
+    border: 2px solid #48494A;
+    z-index: 0;
+}
+
+.what-third-image {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    display: flex;
+    z-index: 1;
+}
+
+.what-third-description {
+    position: absolute;
+    top: 170px;
+    right: 120px;
+    width: 35%;
+    z-index: 1;
+    font-family: "Orbitron", sans-serif;
+    font-size: 17px;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.what-third-description p {
+    margin-bottom: 40px;
+}
+
+footer {
+    padding-top: 200px;
+    padding-bottom: 14px;
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    font-size: 14px;
+    font-style: italic;
+}

@@ -221,11 +221,21 @@ body {
 
 .utbe-what-text {
     position: absolute;
-    top: 100px;
+    top: 70px;
     left: 18%;
     z-index: 1;
     opacity: 0;
     transform: translateX(-100px);
+}
+
+.utbe-what-text-category {
+    text-decoration: none;
+    color: white;
+    transition: color 0.4s ease;
+}
+
+.utbe-what-text-category:hover {
+    color: #780606;
 }
 
 .utbe-what-text.is-visible {
