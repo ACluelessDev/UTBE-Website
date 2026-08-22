@@ -110,12 +110,8 @@ body {
     color: #2D68C4;
 }
 
-main {
-    padding-top: 100px;
-}
-
 footer {
-    padding-top: 200px;
+    padding-top: 965px;
     padding-bottom: 14px;
     text-align: center;
     font-family: "Times New Roman", serif;
@@ -123,110 +119,8 @@ footer {
     font-style: italic;
 }
 
-.what-first-container {
-    position: relative;
-    display: flex;
-    width: 80%;
-    height: 500px;
-    margin: 150px auto 0;
-    background: #292A2D;
-    border-radius: 50px;
-    border: 2px solid #48494A;
-    z-index: 0;
-}
-
-.what-first-image {
+.who-character-one {
     position: absolute;
-    top: 50px;
-    left: 50px;
-    display: flex;
-    z-index: 1;
-}
-
-.what-first-description {
-    position: absolute;
-    top: 150px;
-    right: 120px;
-    width: 35%;
-    z-index: 1;
-    font-family: "Orbitron", sans-serif;
-    font-size: 17px;
-    line-height: 2;
-    color: rgba(255, 255, 255, 0.75);
-}
-
-.what-first-description p {
-    margin-bottom: 40px;
-}
-
-.what-second-container {
-    position: relative;
-    display: flex;
-    width: 80%;
-    height: 500px;
-    margin: 250px auto 0;
-    background: #292A2D;
-    border-radius: 50px;
-    border: 2px solid #48494A;
-    z-index: 0;
-}
-
-.what-second-image {
-    position: absolute;
-    top: 50px;
-    right: 70px;
-    display: flex;
-    z-index: 1;
-}
-
-.what-second-description {
-    position: absolute;
-    top: 170px;
-    left: 100px;
-    width: 35%;
-    z-index: 1;
-    font-family: "Orbitron", sans-serif;
-    font-size: 17px;
-    line-height: 2;
-    color: rgba(255, 255, 255, 0.75);
-}
-
-.what-second-description p {
-    margin-bottom: 40px;
-}
-
-.what-third-container {
-    position: relative;
-    display: flex;
-    width: 80%;
-    height: 500px;
-    margin: 250px auto 0;
-    background: #292A2D;
-    border-radius: 50px;
-    border: 2px solid #48494A;
-    z-index: 0;
-}
-
-.what-third-image {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    display: flex;
-    z-index: 1;
-}
-
-.what-third-description {
-    position: absolute;
-    top: 170px;
-    right: 120px;
-    width: 35%;
-    z-index: 1;
-    font-family: "Orbitron", sans-serif;
-    font-size: 17px;
-    line-height: 2;
-    color: rgba(255, 255, 255, 0.75);
-}
-
-.what-third-description p {
-    margin-bottom: 40px;
+    top: 35%;
+    left: 32%;
 }

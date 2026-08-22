@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHO?</title>
+    <link rel="stylesheet" href="../css/who.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+    <body>
+        <header class="top-bar">
+            <nav class="navbar">
+                <div class="quantacat-dropdown">
+                    <label class="quantacat-dropdown-label">
+                        QUANTACAT <br>STUDIO
+                        <i class="dropdown-arrow">▼</i>
+                    </label>
+                    <div class="quantacat-dropdown-content">
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="utbegdd.html">Game Design Document</a></li>
+                            <li><a href="Other Game Ideas.html">Other Game Ideas</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="what.html">What...?</a>
+                <a href="why.html">Why...?</a>
+                <a class="navbar-return" href="../index.html">RETURN</a>
+            </nav>
+        </header>
+        <main>
+            <section class="who-character-selection">
+                <img class="who-character-one" src="../images/Placeholder Portrait (WHO).png" alt="Character One">
+                <div class="who-character-selection-cycle">
+                    <button class="who-character-arrow-left" id="previous-character">
+                        ◀
+                    </button>
+                    <div class="who-character-stage">
+                        <!-- JavaScript is meant to be here but I'm too lazy rn -->
+                    </div>
+                    <button class="who-character-arrow-right" id="next-character">
+                        ▶
+                    </button>
+                </div>
+            </section>
+            <section class="who-character-profile">
+                <button class="who-char-profile-close">
+                    X
+                </button>
+                <div class="who-profile-content">
+                    <div class="who-profile-portrait-container">
+                        <img class="who-profile-portrait" src="">
+                    </div>
+                    <div class="who-profile-information">
+                        <p class="who-profile-label">IDENTIFICATION</p>
+                        <h1 id="who-profile-name">[NAME]</h1>
+                        <p class="who-profile-alias">[CALLSIGN]</p>
+                        <div class="who-profile-divider"></div>
+                        <p class="who-profile-description">[DESCRIPTION]</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>© 2026 QuantaCat Studio. All Rights Reserved. Website source code is licensed under the MIT license.</p>
+        </footer>
+        <script src="../scripts/who.js"></script>
+    </body>
+</html>

@@ -238,6 +238,16 @@ body {
     color: #780606;
 }
 
+.utbe-who-text-category {
+    text-decoration: none;
+    color: white;
+    transition: color 0.4s ease;
+}
+
+.utbe-who-text-category:hover {
+    color: #780606;
+}
+
 .utbe-what-text.is-visible {
     animation: whatText-Animation 1.2s ease-in-out forwards;
 }
