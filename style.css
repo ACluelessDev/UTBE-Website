@@ -221,11 +221,56 @@ body {
 
 .utbe-what-text {
     position: absolute;
-    top: 70px;
-    left: 18%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    top: 90px;
+    left: 15%;
     z-index: 1;
     opacity: 0;
     transform: translateX(-100px);
+}
+
+.utbe-what-text-arrow {
+    display: inline-block;
+    animation-play-state: paused;
+}
+
+#utbe-what-right-arrow {
+    animation: what-right-arrow-indicator 1.5s ease-in-out infinite;
+}
+
+#utbe-what-left-arrow {
+    animation: what-left-arrow-indicator 1.5s ease-in-out infinite;
+}
+
+.utbe-what-text:has(.utbe-what-text-category:hover) #utbe-what-right-arrow,
+.utbe-what-text:has(.utbe-what-text-category:hover) #utbe-what-left-arrow {
+    animation-play-state: paused;
+}
+
+@keyframes what-right-arrow-indicator {
+    0% {
+        transform: translateX(-10px)
+    }
+    50% {
+        transform: translateX(0px)
+    }
+    100% {
+        transform: translateX(-10px)
+    }
+}
+
+@keyframes what-left-arrow-indicator {
+    0% {
+        transform: translateX(10px);
+    }
+    50% {
+        transform: translateX(0px)
+    }
+    100% {
+        transform: translateX(10px)
+    }
 }
 
 .utbe-what-text-category {
@@ -238,24 +283,14 @@ body {
     color: #780606;
 }
 
-.utbe-who-text-category {
-    text-decoration: none;
-    color: white;
-    transition: color 0.4s ease;
-}
-
-.utbe-who-text-category:hover {
-    color: #780606;
-}
-
 .utbe-what-text.is-visible {
     animation: whatText-Animation 1.2s ease-in-out forwards;
 }
 
 .utbe-what-portrait {
     position: absolute;
-    top: 135px;
-    left: 6%;
+    top: 225px;
+    left: 10%;
     display: flex;
     z-index: 2;
     opacity: 0;
@@ -363,11 +398,66 @@ body {
 
 .utbe-who-text {
     position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 40px;
     top: 100px;
-    left: 20%;
+    left: 17%;
     z-index: 1;
     opacity: 0;
     transform: translateX(-100px);
+}
+
+.utbe-who-text-arrow {
+    display: inline-block;
+    animation-play-state: paused;
+}
+
+#utbe-who-right-arrow {
+    animation: who-right-arrow-indicator 1.5s ease-in-out infinite;
+}
+
+#utbe-who-left-arrow {
+    animation: who-left-arrow-indicator 1.5s ease-in-out infinite;
+}
+
+.utbe-who-text:has(.utbe-who-text-category:hover) #utbe-who-right-arrow,
+.utbe-who-text:has(.utbe-who-text-category:hover) #utbe-who-left-arrow {
+    animation-play-state: paused;
+}
+
+@keyframes who-right-arrow-indicator {
+    0% {
+        transform: translateX(-10px)
+    }
+    50% {
+        transform: translateX(0px)
+    }
+    100% {
+        transform: translateX(-10px)
+    }
+}
+
+@keyframes who-left-arrow-indicator {
+    0% {
+        transform: translateX(10px);
+    }
+    50% {
+        transform: translateX(0px)
+    }
+    100% {
+        transform: translateX(10px)
+    }
+}
+
+.utbe-who-text-category {
+    text-decoration: none;
+    color: white;
+    transition: color 0.4s ease;
+}
+
+.utbe-who-text-category:hover {
+    color: #780606;
 }
 
 .utbe-who-text.is-visible {
@@ -625,6 +715,12 @@ h1 {
 h2 {
     font-family: "Wallpoet", sans-serif;
     font-size: 70px;
+    font-weight: normal;
+}
+
+h3 {
+    font-family: "Wallpoet", sans-serif;
+    font-size: 30px;
     font-weight: normal;
 }
 
