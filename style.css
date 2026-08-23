@@ -887,3 +887,17 @@ footer {
         font-size: 9px;
     }
 }
+
+@font-face {
+    font-family: 'Wallpoet';
+    src: url('fonts/Wallpoet.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('fonts/Orbitron.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
