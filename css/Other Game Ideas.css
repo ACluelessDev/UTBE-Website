@@ -1,0 +1,584 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #05050a;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.topbar-hide {
+    transform: translateY(-100%);
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 25px;
+    gap: 70px;
+}
+
+.navbar a {
+    padding-left: 30px;
+    padding-top: 15px;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+.navbar a:hover {
+    color: #780606;
+}
+
+.navbar-return {
+    margin-left: auto;
+}
+
+.quantacat-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.quantacat-dropdown-label {
+    display: block;
+    padding-top: 5px;
+    text-align: center;
+    line-height: 1.5;
+    cursor: pointer;
+    font-family: "Wallpoet", sans-serif;
+}
+
+.dropdown-arrow {
+    position: absolute;
+    transform: translate(30px, -12px);
+}
+
+.quantacat-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: -25px;
+    background-color: #000;
+    min-width: 180px;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.quantacat-dropdown:hover .quantacat-dropdown-content,
+.quantacat-dropdown:focus-within .quantacat-dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.quantacat-dropdown-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.quantacat-dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.quantacat-dropdown-content a:hover {
+    background-color: #333;
+    color: #2D68C4;
+}
+
+.ideas-gallery {
+    padding: 40px 6% 100px;
+}
+
+.ideas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.ideas-card {
+    --accent: #780606;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #16161D;
+    border-top: 3px solid var(--accent);
+    transition: box-shadow 0.4s ease;
+}
+
+.ideas-card:hover {
+    box-shadow: 0 0 40px -12px var(--accent);
+}
+
+.ideas-card.ideas-animate {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.ideas-card.is-visible {
+    animation: ideasCard-Animation 0.9s ease-in-out forwards;
+}
+
+.ideas-card:nth-child(even).is-visible {
+    animation-delay: 0.15s;
+}
+
+@keyframes ideasCard-Animation {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.ideas-intro {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+    min-height: 420px;
+    padding: 60px 5% 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.ideas-background-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    z-index: 0;
+    font-family: "Wallpoet", sans-serif;
+    font-size: 500px;
+    color: rgb(255 255 255 / 0.11);
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.ideas-intro h1 {
+    position: relative;
+    z-index: 1;
+}
+
+.ideas-subtext {
+    position: relative;
+    z-index: 1;
+    padding-top: 35px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: italic;
+    color: red;
+}
+
+.ideas-card:nth-child(1) {
+    --accent: #c97a7a;
+}
+
+.ideas-card:nth-child(2) {
+    --accent: #ee5440;
+}
+
+.ideas-card:nth-child(3) {
+    --accent: #4fd1b5;
+}
+
+.ideas-card:nth-child(4) {
+    --accent: #e08f4a;
+}
+
+.ideas-card:nth-child(5) {
+    --accent: #c0492f;
+}
+
+.ideas-card:nth-child(6) {
+    --accent: #d9a06f;
+}
+
+.ideas-card:nth-child(7) {
+    --accent: #e6b53a;
+}
+
+.ideas-card:nth-child(8) {
+    --accent: #a79bc9;
+}
+
+.ideas-card:nth-child(9) {
+    --accent: #7f9cff;
+}
+
+.ideas-card:nth-child(10) {
+    --accent: #ff9a6c;
+}
+
+.ideas-card:nth-child(11) {
+    --accent: #ff6b5e;
+}
+
+.ideas-card:nth-child(12) {
+    --accent: #2fa8d8;
+}
+
+.ideas-card:nth-child(13) {
+    --accent: #9d8fe0;
+}
+
+.ideas-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    flex-direction: row;
+}
+
+.ideas-card-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 360px;
+    background-color: #0b0b11;
+    overflow: hidden;
+}
+
+.ideas-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.6s ease;
+}
+
+.ideas-card:hover .ideas-card-image img {
+    transform: scale(1.04);
+}
+
+.ideas-card:last-child:nth-child(odd) .ideas-card-image {
+    flex: 0 0 50%;
+    height: auto;
+    min-height: 400px;
+}
+
+.ideas-card-label {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.65);
+    font-family: "Orbitron", sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--accent);
+}
+
+.ideas-card-text {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    padding: 30px 35px 45px;
+}
+
+.ideas-card:last-child:nth-child(odd) .ideas-card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ideas-card-text h3 {
+    margin-bottom: 25px;
+    font-family: "Wallpoet", sans-serif;
+    font-size: clamp(22px, 2.2vw, 32px);
+    font-weight: normal;
+    transition: color 0.4s ease;
+}
+
+.ideas-card:hover .ideas-card-text h3 {
+    color: var(--accent);
+}
+
+.ideas-card-description {
+    padding-left: 20px;
+    border-left: 2px solid var(--accent);
+    font-family: "Orbitron", sans-serif;
+    font-size: 14px;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.ideas-card-description p + p {
+    margin-top: 20px;
+}
+
+.ideas-highlight {
+    font-style: italic;
+    color: #8fe38f;
+}
+
+.ideas-highlight-alt {
+    font-weight: bold;
+    font-style: italic;
+    color: #6fe3d1;
+}
+
+.ideas-extra {
+    font-weight: bold;
+    color: #5fc3e8;
+}
+
+.ideas-strike {
+    text-decoration: line-through;
+    text-decoration-color: #ff6b6b;
+    color: #ff9aa0;
+}
+
+.ideas-card-number {
+    position: absolute;
+    right: -10px;
+    bottom: -50px;
+    z-index: 0;
+    font-family: "Wallpoet", sans-serif;
+    font-size: 220px;
+    color: rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+h1 {
+    font-family: "Wallpoet", sans-serif;
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: normal;
+}
+
+footer {
+    padding: 7px;
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    font-size: 14px;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Wallpoet';
+    src: url('../fonts/Wallpoet.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../fonts/Orbitron.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media (max-width: 1200px) {
+    .ideas-grid {
+        gap: 35px;
+    }
+
+    .ideas-card-text {
+        padding: 25px 25px 40px;
+    }
+
+    .ideas-card-description {
+        font-size: 13px;
+        line-height: 1.9;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        height: 75px;
+    }
+
+    .navbar {
+        width: 100%;
+        padding: 15px 15px 0;
+        gap: 18px;
+        align-items: flex-start;
+    }
+
+    .navbar a {
+        padding-left: 5px;
+        padding-top: 10px;
+        font-size: 11px;
+    }
+
+    .quantacat-dropdown-label {
+        padding: 5px 6px 20px;
+        font-size: 0;
+    }
+
+    .quantacat-dropdown-label::before {
+        content: "";
+        display: block;
+        width: 22px;
+        height: 2px;
+        margin: 12px auto 0;
+        background: #ffffff;
+        box-shadow: 0 -7px 0 #ffffff, 0 7px 0 #ffffff;
+    }
+
+    .dropdown-arrow {
+        display: none;
+    }
+
+    .quantacat-dropdown-content {
+        left: -10px;
+        min-width: 180px;
+    }
+
+    h1 {
+        font-size: 50px;
+        line-height: 1.1;
+    }
+
+    .ideas-intro {
+        height: 60vh;
+        height: 60svh;
+        min-height: 380px;
+    }
+
+    .ideas-background-number {
+        font-size: 300px;
+    }
+
+    .ideas-subtext {
+        padding-top: 25px;
+        font-size: 17px;
+    }
+
+    .ideas-gallery {
+        padding: 30px 6% 80px;
+    }
+
+    .ideas-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .ideas-card:nth-child(even).is-visible {
+        animation-delay: 0s;
+    }
+
+    .ideas-card:last-child:nth-child(odd) {
+        flex-direction: column;
+    }
+
+    .ideas-card-image {
+        height: 300px;
+    }
+
+    .ideas-card:last-child:nth-child(odd) .ideas-card-image {
+        flex: none;
+        height: 300px;
+        min-height: 0;
+    }
+
+    .ideas-card-number {
+        font-size: 160px;
+        bottom: -30px;
+    }
+
+    footer {
+        padding: 10px 15px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        height: 65px;
+    }
+
+    .navbar {
+        padding: 10px 8px 0;
+        gap: 14px;
+    }
+
+    .quantacat-dropdown-content {
+        left: -5px;
+        min-width: 160px;
+    }
+
+    .quantacat-dropdown-content a {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+
+    h1 {
+        font-size: 35px;
+        line-height: 1.15;
+    }
+
+    .ideas-background-number {
+        font-size: 220px;
+    }
+
+    .ideas-subtext {
+        padding-top: 18px;
+        font-size: 14px;
+    }
+
+    .ideas-card-image,
+    .ideas-card:last-child:nth-child(odd) .ideas-card-image {
+        height: 240px;
+    }
+
+    .ideas-card-text {
+        padding: 22px 20px 35px;
+    }
+
+    .ideas-card-description {
+        padding-left: 15px;
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    h1 {
+        font-size: 29px;
+    }
+
+    .ideas-subtext {
+        font-size: 12px;
+    }
+}

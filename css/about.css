@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100vh;
+    height: 100dvh;
+    background: #05050a;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.topbar-hide {
+    transform: translateY(-100%);
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 25px;
+    gap: 70px;
+}
+
+.navbar a {
+    padding-left: 30px;
+    padding-top: 15px;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+.navbar a:hover {
+    color: #780606;
+}
+
+.navbar-return {
+    margin-left: auto;
+}
+
+.quantacat-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.quantacat-dropdown-label {
+    display: block;
+    padding-top: 5px;
+    text-align: center;
+    line-height: 1.5;
+    cursor: pointer;
+    font-family: "Wallpoet", sans-serif;
+}
+
+.dropdown-arrow {
+    position: absolute;
+    transform: translate(30px, -12px);
+}
+
+.quantacat-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: -25px;
+    background-color: #000;
+    min-width: 180px;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.quantacat-dropdown:hover .quantacat-dropdown-content,
+.quantacat-dropdown:focus-within .quantacat-dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.quantacat-dropdown-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.quantacat-dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.quantacat-dropdown-content a:hover {
+    background-color: #333;
+    color: #2D68C4;
+}
+
+.about-header {
+    position: relative;
+    width: 100%;
+    height: 62vh;
+    overflow: hidden;
+    background: #16161D;
+}
+
+.about-art {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    z-index: 1;
+}
+
+.about-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    font-family: "Wallpoet", sans-serif;
+    font-size: clamp(36px, 7.5vw, 130px);
+    font-weight: normal;
+    line-height: 1;
+    white-space: nowrap;
+    color: black;
+    text-align: center;
+    pointer-events: none;
+}
+
+.about-text {
+    height: 33vh;
+    padding: 100px 12% 28px;
+    background: #05050a;
+}
+
+.about-text-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.about-text-columns p {
+    font-family: "Orbitron", sans-serif;
+    font-size: 14px;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+footer {
+    padding: 7px;
+    text-align: center;
+    background: #05050a;
+    font-family: "Times New Roman", serif;
+    font-size: 14px;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Wallpoet';
+    src: url('../fonts/Wallpoet.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../fonts/Orbitron.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media (max-height: 760px) {
+    .about-text {
+        padding: 28px 12% 18px;
+    }
+
+    .about-text-columns p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 1200px) {
+    .about-text {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .about-text-columns {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .top-bar {
+        height: 75px;
+    }
+
+    .navbar {
+        width: 100%;
+        padding: 15px 15px 0;
+        gap: 18px;
+        align-items: flex-start;
+    }
+
+    .navbar a {
+        padding-left: 5px;
+        padding-top: 10px;
+        font-size: 11px;
+    }
+
+    .quantacat-dropdown-label {
+        padding: 5px 6px 20px;
+        font-size: 0;
+    }
+
+    .quantacat-dropdown-label::before {
+        content: "";
+        display: block;
+        width: 22px;
+        height: 2px;
+        margin: 12px auto 0;
+        background: #ffffff;
+        box-shadow: 0 -7px 0 #ffffff, 0 7px 0 #ffffff;
+    }
+
+    .dropdown-arrow {
+        display: none;
+    }
+
+    .quantacat-dropdown-content {
+        left: -10px;
+        min-width: 180px;
+    }
+
+    .about-header {
+        height: 70vh;
+        height: 70svh;
+        min-height: 420px;
+    }
+
+    .about-title {
+        font-size: clamp(36px, 13vw, 80px);
+        line-height: 1.1;
+    }
+
+    .about-title span {
+        display: block;
+    }
+
+    .about-text {
+        height: auto;
+        padding: 25px 10% 30px;
+    }
+
+    .about-text-columns {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .about-text-columns p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    footer {
+        padding: 10px 15px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        height: 65px;
+    }
+
+    .navbar {
+        padding: 10px 8px 0;
+        gap: 14px;
+    }
+
+    .quantacat-dropdown-content {
+        left: -5px;
+        min-width: 160px;
+    }
+
+    .quantacat-dropdown-content a {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+
+    .about-text-columns p {
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+}
