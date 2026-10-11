@@ -19,7 +19,7 @@ body {
     width: 100%;
     height: 100px;
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
     background: rgba(0, 0, 0, 0.5);
     z-index: 100;
     transition: transform 0.3s ease;
@@ -86,7 +86,8 @@ body {
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 
-.quantacat-dropdown:hover .quantacat-dropdown-content {
+.quantacat-dropdown:hover .quantacat-dropdown-content,
+.quantacat-dropdown:focus-within .quantacat-dropdown-content {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -123,4 +124,114 @@ footer {
     position: absolute;
     top: 35%;
     left: 32%;
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        height: 75px;
+    }
+
+    .navbar {
+        width: 100%;
+        padding: 15px 15px 0;
+        gap: 18px;
+        align-items: flex-start;
+    }
+
+    .navbar a {
+        padding-left: 5px;
+        padding-top: 10px;
+        font-size: 11px;
+    }
+
+    .navbar-return {
+        right: 15px;
+    }
+
+    .navbar .navbar-return {
+        padding: 8px 5px;
+        font-size: 0;
+    }
+
+    .navbar-return::before {
+        content: "\21B5";
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .quantacat-dropdown-label {
+        padding: 5px 6px 20px;
+        font-size: 0;
+    }
+
+    .quantacat-dropdown-label::before {
+        content: "";
+        display: block;
+        width: 22px;
+        height: 2px;
+        margin: 12px auto 0;
+        background: #ffffff;
+        box-shadow: 0 -7px 0 #ffffff, 0 7px 0 #ffffff;
+    }
+
+    .dropdown-arrow {
+        display: none;
+    }
+
+    .quantacat-dropdown-content {
+        left: -10px;
+        min-width: 180px;
+    }
+
+    .quantacat-dropdown-content a {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        height: 65px;
+    }
+
+    .navbar {
+        padding: 10px 8px 0;
+        gap: 14px;
+    }
+
+    .navbar a {
+        padding-left: 2px;
+        padding-top: 9px;
+        font-size: 11px;
+    }
+
+    .navbar-return {
+        right: 8px;
+    }
+
+    .quantacat-dropdown-content {
+        left: -5px;
+        min-width: 160px;
+    }
+
+    .quantacat-dropdown-content a {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 360px) {
+    .navbar {
+        gap: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .navbar a {
+        font-size: 10px;
+    }
+
+    .quantacat-dropdown-content a {
+        font-size: 11px;
+    }
 }
