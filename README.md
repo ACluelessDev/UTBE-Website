@@ -19,8 +19,12 @@ However, any intellectual property associated with the **"Until The Bleeding Edg
 
 <img width="746" height="1000" alt="20260806_001939" src="https://github.com/user-attachments/assets/2d2285b1-96d3-428b-a933-621a58c77e1d" /> <br><br>
 
-**CHARACTERS PAGE _(who.html)_ SKETCH**
+**CHARACTERS PAGE _(who.html)_ UPDATED SKETCH**
 
-<img width="746" height="1000" alt="20260806_002333" src="https://github.com/user-attachments/assets/82edc328-884e-4f86-8dfb-c7d70cce54f6" /> <br><br><br>
+<img width="1586" height="2047" alt="bVkWVwbK" src="https://github.com/user-attachments/assets/64783e41-a0ec-48b6-98c3-d7b15d08ca88" /> <br><br><br>
 
-_Footnote: I still haven't decided what I'd want for both the STORY PAGE (why.html) and the GAMEPLAY PAGE (how.html). But if you notice in the HOME PAGE sketch, the "How?" link was omitted. This is because I might consider actually removing the idea of the "how.html" since the GAME DESCRIPTION PAGE should briefly touch on the gameplay. We'll see in the future of this project if I end up bringing back the how.html._
+**PURPOSE PAGE _(why.html)_ SKETCH**
+
+<img width="1558" height="2048" alt="Yin6cYDl" src="https://github.com/user-attachments/assets/656f3cbb-4004-4db0-99ec-f56a0d033fa5" /> <br><br><br>
+
+_Updated Footnote: The How? page and the QuantaCat Studio information pages will not be having a sketch-up appearance. The How? page has been finalized to only be present in the index.html (main) page, as having the How? page makes itself redundant due to the What? page already briefly describing the gameplay. The QuantaCat Studio information on the other hand will be basic and perhaps not even on-theme with the rest of the website, merely acting as a "About the Studio" page. I may also take inspiration from other websites, as opposed to coming up with my own since I'm getting slightly lazy with the design. If ever I do come up with my own design, the README.md will be updated accordingly._
