@@ -21,7 +21,7 @@ body {
     min-height: 100vh;
     z-index: -2;
     object-fit: cover;
-    opacity: 15%;
+    opacity: 0.15;
     filter: blur(10px);
 }
 
@@ -31,7 +31,7 @@ body {
     width: 100%;
     height: 100px;
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
     background: rgba(0, 0, 0, 0.5);
     z-index: 100;
     transition: transform 0.3s ease;
@@ -98,7 +98,8 @@ body {
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 
-.quantacat-dropdown:hover .quantacat-dropdown-content {
+.quantacat-dropdown:hover .quantacat-dropdown-content,
+.quantacat-dropdown:focus-within .quantacat-dropdown-content {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -123,12 +124,16 @@ body {
 }
 
 main {
-    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 400px));
+    justify-content: center;
+    align-items: start;
+    gap: 60px 8vw;
+    padding: 270px 5% 150px;
 }
 
 footer {
-    padding-top: 865px;
-    padding-bottom: 14px;
+    padding: 14px 15px;
     text-align: center;
     font-family: "Times New Roman", serif;
     font-size: 14px;
@@ -136,31 +141,24 @@ footer {
 }
 
 .what-first-container {
-    position: absolute;
-    top: 170px;
-    display: flex;
-    width: 80%;
-    height: 500px;
+    display: grid;
+    gap: 30px;
+    width: 100%;
     z-index: 0;
     animation: blur-fade-in 1s ease-in-out forwards;
     opacity: 0;
 }
 
-.what-first-image {
-    position: absolute;
-    top: 100px;
-    left: 150px;
-    display: flex;
-    z-index: 1;
+.what-first-image img,
+.what-second-image img,
+.what-third-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .what-first-description {
-    position: absolute;
     text-align: justify;
-    top: 380px;
-    left: 154px;
-    width: 25.4%;
-    z-index: 1;
     font-family: "Orbitron", sans-serif;
     font-size: 14px;
     line-height: 2;
@@ -172,32 +170,17 @@ footer {
 }
 
 .what-second-container {
-    position: absolute;
-    top: 170px;
-    display: flex;
-    width: 80%;
-    height: 500px;
+    display: grid;
+    gap: 30px;
+    width: 100%;
     z-index: 0;
     animation: blur-fade-in 1s ease-in-out forwards;
     animation-delay: 0.7s;
     opacity: 0;
 }
 
-.what-second-image {
-    position: absolute;
-    top: 100px;
-    left: 740px;
-    display: flex;
-    z-index: 1;
-}
-
 .what-second-description {
-    position: absolute;
     text-align: justify;
-    top: 380px;
-    left: 740px;
-    width: 25.4%;
-    z-index: 1;
     font-family: "Orbitron", sans-serif;
     font-size: 14px;
     line-height: 2;
@@ -209,32 +192,17 @@ footer {
 }
 
 .what-third-container {
-    position: absolute;
-    top: 170px;
-    display: flex;
-    width: 80%;
-    height: 500px;
+    display: grid;
+    gap: 30px;
+    width: 100%;
     z-index: 0;
     animation: blur-fade-in 1s ease-in-out forwards;
     animation-delay: 1.2s;
     opacity: 0;
 }
 
-.what-third-image {
-    position: absolute;
-    top: 100px;
-    right: -200px;
-    display: flex;
-    z-index: 1;
-}
-
 .what-third-description {
-    position: absolute;
     text-align: justify;
-    top: 380px;
-    right: -190px;
-    width: 25.2%;
-    z-index: 1;
     font-family: "Orbitron", sans-serif;
     font-size: 14px;
     line-height: 2;
@@ -268,4 +236,153 @@ footer {
     src: url('../fonts/Orbitron.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+@media (max-width: 1000px) {
+    main {
+        grid-template-columns: repeat(2, minmax(0, 400px));
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        height: 75px;
+    }
+
+    .navbar {
+        width: 100%;
+        padding: 15px 15px 0;
+        gap: 18px;
+        align-items: flex-start;
+    }
+
+    .navbar a {
+        padding-left: 5px;
+        padding-top: 10px;
+        font-size: 11px;
+    }
+
+    .navbar-return {
+        right: 15px;
+    }
+
+    .navbar .navbar-return {
+        padding: 8px 5px;
+        font-size: 0;
+    }
+
+    .navbar-return::before {
+        content: "\21B5";
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .quantacat-dropdown-label {
+        padding: 5px 6px 20px;
+        font-size: 0;
+    }
+
+    .quantacat-dropdown-label::before {
+        content: "";
+        display: block;
+        width: 22px;
+        height: 2px;
+        margin: 12px auto 0;
+        background: #ffffff;
+        box-shadow: 0 -7px 0 #ffffff, 0 7px 0 #ffffff;
+    }
+
+    .dropdown-arrow {
+        display: none;
+    }
+
+    .quantacat-dropdown-content {
+        left: -10px;
+        min-width: 180px;
+    }
+
+    .quantacat-dropdown-content a {
+        padding: 10px 15px;
+    }
+
+    main {
+        gap: 50px 6vw;
+        padding: 150px 8% 80px;
+    }
+
+    footer {
+        padding: 10px 15px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        grid-template-columns: minmax(0, 400px);
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        height: 65px;
+    }
+
+    .navbar {
+        padding: 10px 8px 0;
+        gap: 14px;
+    }
+
+    .navbar a {
+        padding-left: 2px;
+        padding-top: 9px;
+        font-size: 11px;
+    }
+
+    .navbar-return {
+        right: 8px;
+    }
+
+    .quantacat-dropdown-content {
+        left: -5px;
+        min-width: 160px;
+    }
+
+    .quantacat-dropdown-content a {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+
+    main {
+        padding: 120px 6% 60px;
+    }
+
+    .what-first-description,
+    .what-second-description,
+    .what-third-description {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .navbar {
+        gap: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .navbar a {
+        font-size: 10px;
+    }
+
+    .quantacat-dropdown-content a {
+        font-size: 11px;
+    }
 }

@@ -19,7 +19,7 @@ body {
     width: 100%;
     height: 100px;
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
     background: rgba(0, 0, 0, 0.5);
     z-index: 100;
     transition: transform 0.3s ease;
@@ -81,7 +81,8 @@ body {
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 
-.quantacat-dropdown:hover .quantacat-dropdown-content {
+.quantacat-dropdown:hover .quantacat-dropdown-content,
+.quantacat-dropdown:focus-within .quantacat-dropdown-content {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -136,7 +137,9 @@ body {
 .utbe-text-overlay {
     position: absolute;
     top: 40%;
-    transform: translate(22%, 10%);
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, 10%);
     z-index: 2;
     color: white;
     text-align: center;
@@ -292,9 +295,16 @@ body {
     top: 225px;
     left: 10%;
     display: flex;
+    width: 38%;
+    max-width: 550px;
     z-index: 2;
     opacity: 0;
     transform: translateX(-100px);
+}
+
+.utbe-what-portrait img {
+    width: 100%;
+    height: auto;
 }
 
 .utbe-what-portrait.is-visible {
@@ -332,6 +342,7 @@ body {
     font-size: 500px;
     color: rgba(255, 255, 255, 0.025);
     pointer-events: none;
+    -webkit-user-select: none;
     user-select: none;
 }
 
@@ -469,9 +480,16 @@ body {
     top: 200px;
     left: 5%;
     display: flex;
+    width: 44%;
+    max-width: 600px;
     z-index: 2;
     opacity: 0;
     transform: translateX(-100px);
+}
+
+.utbe-who-portrait img {
+    width: 100%;
+    height: auto;
 }
 
 .utbe-who-portrait.is-visible {
@@ -509,6 +527,7 @@ body {
     font-size: 500px;
     color: rgba(255, 255, 255, 0.05);
     pointer-events: none;
+    -webkit-user-select: none;
     user-select: none;
 }
 
@@ -601,9 +620,16 @@ body {
     top: 220px;
     left: 12.5%;
     display: flex;
+    width: 36%;
+    max-width: 550px;
     z-index: 2;
     opacity: 0;
     transform: translateX(-100px);
+}
+
+.utbe-why-portrait img {
+    width: 100%;
+    height: auto;
 }
 
 .utbe-why-portrait.is-visible {
@@ -641,6 +667,7 @@ body {
     font-size: 500px;
     color: rgba(255, 255, 255, 0.025);
     pointer-events: none;
+    -webkit-user-select: none;
     user-select: none;
 }
 
@@ -708,13 +735,13 @@ body {
 
 h1 {
     font-family: "Wallpoet", sans-serif;
-    font-size: 80px;
+    font-size: clamp(40px, 6vw, 80px);
     font-weight: normal;
 }
 
 h2 {
     font-family: "Wallpoet", sans-serif;
-    font-size: 70px;
+    font-size: clamp(36px, 5vw, 70px);
     font-weight: normal;
 }
 
@@ -732,162 +759,6 @@ footer {
     font-style: italic;
 }
 
-/* Massive credits to YouTube "CSS Snippets" for the media queries and its use cases
-    This helps a lot with making sure the website is applicable to mobile devices as well
-    YouTube Source: https://youtu.be/Q8meex0f3c8
- */
-@media (max-width: 768px) {
-    .navbar {
-        padding-left: 15px;
-        gap: 20px;
-    }
-
-    .navbar a {
-        padding-left: 10px;
-        font-size: 12px;
-    }
-
-    .utbe-text-overlay {
-        left: 0;
-        width: 100%;
-        transform: translate(0%, 10%);
-    }
-
-    h1 {
-        font-size: 50px;
-    }
-
-    h2 {
-        font-size: 45px;
-    }
-
-    .utbe-what-text {
-        left: 30px;
-    }
-
-    .utbe-what-portrait {
-        left: 35%;
-        top: 250px;
-    }
-
-    .utbe-what-portrait img {
-        max-width: 80vw;
-        height: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        padding-left: 10px;
-        gap: 5px;
-    }
-
-    .navbar a {
-        padding-left: 5px;
-        font-size: 9px;
-    }
-
-    .quantacat-dropdown-label {
-        font-size: 10px;
-    }
-
-    .utbe-text-overlay {
-        top: 35%;
-    }
-
-    h1 {
-        font-size: 35px;
-    }
-
-    h2 {
-        font-size: 32px;
-    }
-
-    .utbe-what-text {
-        left: 20px;
-    }
-
-    .utbe-what-portrait {
-        left: 20%;
-        top: 220px;
-    }
-
-    .utbe-what-portrait img {
-        max-width: 90vw;
-    }
-}
-
-@media (max-width: 768px) {
-    .utbe-what-container {
-        height: 1200px;
-    }
-
-    .utbe-what-background-number {
-        font-size: 300px;
-        left: -20px;
-        bottom: -40px;
-    }
-
-    .utbe-what-divider {
-        top: 800px;
-        left: 15%;
-        width: 70%;
-        height: 1px;
-        background: linear-gradient(
-                to right,
-                transparent,
-                rgba(255, 255, 255, 0.15),
-                transparent
-        );
-    }
-
-    .utbe-what-right {
-        top: 850px;
-        left: 10%;
-        width: 80%;
-    }
-
-    .utbe-what-description {
-        font-size: 14px;
-        line-height: 1.9;
-    }
-
-    .utbe-what-bottom-label {
-        top: 750px;
-        left: 30px;
-    }
-}
-
-@media (max-width: 480px) {
-    .utbe-what-container {
-        height: 1150px;
-    }
-
-    .utbe-what-background-number {
-        font-size: 220px;
-        bottom: -20px;
-    }
-
-    .utbe-what-divider {
-        top: 720px;
-    }
-
-    .utbe-what-right {
-        top: 770px;
-        left: 10%;
-        width: 80%;
-    }
-
-    .utbe-what-description {
-        font-size: 12px;
-    }
-
-    .utbe-what-bottom-label {
-        top: 680px;
-        font-size: 9px;
-    }
-}
-
 @font-face {
     font-family: 'Wallpoet';
     src: url('fonts/Wallpoet.woff') format('woff');
@@ -900,4 +771,446 @@ footer {
     src: url('fonts/Orbitron.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+@media (max-width: 1200px) {
+    .utbe-what-right,
+    .utbe-who-right,
+    .utbe-why-right {
+        left: 54%;
+        width: 38%;
+    }
+
+    .utbe-what-description,
+    .utbe-who-description,
+    .utbe-why-description {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+}
+
+/* Massive credits to YouTube "CSS Snippets" for the media queries and its use cases
+    This helps a lot with making sure the website is applicable to mobile devices as well
+    YouTube Source: https://youtu.be/Q8meex0f3c8
+ */
+@media (max-width: 768px) {
+    .top-bar {
+        height: 75px;
+    }
+
+    .navbar {
+        width: 100%;
+        padding: 15px 15px 0;
+        gap: 18px;
+        align-items: flex-start;
+    }
+
+    .navbar a {
+        padding-left: 5px;
+        padding-top: 10px;
+        font-size: 11px;
+    }
+
+    .quantacat-dropdown-label {
+        padding: 5px 6px 20px;
+        font-size: 0;
+    }
+
+    .quantacat-dropdown-label::before {
+        content: "";
+        display: block;
+        width: 22px;
+        height: 2px;
+        margin: 12px auto 0;
+        background: #ffffff;
+        box-shadow: 0 -7px 0 #ffffff, 0 7px 0 #ffffff;
+    }
+
+    .dropdown-arrow {
+        display: none;
+    }
+
+    .quantacat-dropdown-content {
+        left: -10px;
+        min-width: 180px;
+    }
+
+    .quantacat-dropdown-content a {
+        padding: 10px 15px;
+    }
+
+    .utbe-main {
+        height: 100vh;
+        height: 100svh;
+        min-height: 600px;
+    }
+
+    .utbe-text-overlay {
+        top: 40%;
+        left: 50%;
+        width: 94%;
+        transform: translate(-50%, 10%);
+    }
+
+    h1 {
+        font-size: 50px;
+        line-height: 1.1;
+    }
+
+    h2 {
+        font-size: 45px;
+    }
+
+    #utbe-main-subtext {
+        padding-top: 25px;
+        padding-right: 0;
+        font-size: 17px;
+    }
+
+    .scroll-down-indicator {
+        bottom: 70px;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    .utbe-what-container,
+    .utbe-who-container,
+    .utbe-why-container {
+        height: 1200px;
+        transform: translate(0%, -5%);
+    }
+
+    .utbe-what-text,
+    .utbe-who-text,
+    .utbe-why-text {
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 20px;
+        width: max-content;
+        max-width: 90%;
+    }
+
+    .utbe-what-text.is-visible,
+    .utbe-who-text.is-visible,
+    .utbe-why-text.is-visible {
+        animation-name: mobile-section-text-animation;
+    }
+
+    .utbe-what-portrait,
+    .utbe-who-portrait,
+    .utbe-why-portrait {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 75%;
+        max-width: 550px;
+        justify-content: center;
+    }
+
+    .utbe-what-portrait {
+        top: 200px;
+    }
+
+    .utbe-who-portrait {
+        top: 180px;
+    }
+
+    .utbe-why-portrait {
+        top: 200px;
+    }
+
+    .utbe-what-portrait img,
+    .utbe-who-portrait img,
+    .utbe-why-portrait img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .utbe-what-portrait.is-visible,
+    .utbe-who-portrait.is-visible,
+    .utbe-why-portrait.is-visible {
+        animation-name: mobile-section-portrait-animation;
+    }
+
+    .utbe-what-background-number,
+    .utbe-who-background-number,
+    .utbe-why-background-number {
+        left: -15px;
+        bottom: -60px;
+        font-size: 300px;
+    }
+
+    .utbe-what-divider,
+    .utbe-who-divider,
+    .utbe-why-divider {
+        top: 700px;
+        left: 10%;
+        width: 80%;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15), transparent);
+    }
+
+    .utbe-what-right,
+    .utbe-who-right,
+    .utbe-why-right {
+        top: 750px;
+        left: 10%;
+        width: 80%;
+    }
+
+    .utbe-who-right {
+        top: 750px;
+    }
+
+    .utbe-why-right {
+        top: 750px;
+    }
+
+    .utbe-what-description,
+    .utbe-who-description,
+    .utbe-why-description {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .utbe-what-description p,
+    .utbe-who-description p,
+    .utbe-why-description p {
+        margin-bottom: 30px;
+    }
+
+    .utbe-what-bottom-label,
+    .utbe-who-bottom-label,
+    .utbe-why-bottom-label {
+        top: 660px;
+        left: 10%;
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    footer {
+        padding: 10px 15px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    @keyframes mobile-section-text-animation {
+        0% {
+            transform: translateX(calc(-50% - 100px));
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(-50%);
+            opacity: 1;
+        }
+    }
+
+    @keyframes mobile-section-portrait-animation {
+        0% {
+            transform: translateX(calc(-50% - 100px));
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(-50%);
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        height: 65px;
+    }
+
+    .navbar {
+        padding: 10px 8px 0;
+        gap: 14px;
+    }
+
+    .navbar a {
+        padding-left: 2px;
+        padding-top: 9px;
+        font-size: 11px;
+    }
+
+    .quantacat-dropdown-content {
+        left: -5px;
+        min-width: 160px;
+    }
+
+    .quantacat-dropdown-content a {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+
+    .utbe-main {
+        height: 100svh;
+        min-height: 520px;
+    }
+
+    .utbe-text-overlay {
+        top: 36%;
+        width: 94%;
+    }
+
+    h1 {
+        font-size: 35px;
+        line-height: 1.15;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    #utbe-main-subtext {
+        padding-top: 18px;
+        font-size: 14px;
+    }
+
+    .scroll-down-indicator {
+        bottom: 45px;
+        transform: translate(-50%, -50%) scale(0.65);
+    }
+
+    .utbe-what-container,
+    .utbe-who-container,
+    .utbe-why-container {
+        height: 1150px;
+        transform: translate(0%, -5%);
+    }
+
+    .utbe-what-text,
+    .utbe-who-text,
+    .utbe-why-text {
+        top: 50px;
+        gap: 12px;
+    }
+
+    .utbe-what-portrait,
+    .utbe-who-portrait,
+    .utbe-why-portrait {
+        width: 82%;
+    }
+
+    .utbe-what-portrait {
+        top: 155px;
+    }
+
+    .utbe-who-portrait {
+        top: 145px;
+    }
+
+    .utbe-why-portrait {
+        top: 155px;
+    }
+
+    .utbe-what-background-number,
+    .utbe-who-background-number,
+    .utbe-why-background-number {
+        font-size: 220px;
+        bottom: -30px;
+        left: -10px;
+    }
+
+    .utbe-what-divider,
+    .utbe-who-divider,
+    .utbe-why-divider {
+        top: 620px;
+        left: 8%;
+        width: 84%;
+    }
+
+    .utbe-what-right,
+    .utbe-who-right,
+    .utbe-why-right {
+        top: 670px;
+        left: 8%;
+        width: 84%;
+    }
+
+    .utbe-who-right {
+        top: 670px;
+    }
+
+    .utbe-why-right {
+        top: 670px;
+    }
+
+    .utbe-what-description,
+    .utbe-who-description,
+    .utbe-why-description {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .utbe-what-description p,
+    .utbe-who-description p,
+    .utbe-why-description p {
+        margin-bottom: 24px;
+    }
+
+    .utbe-what-bottom-label,
+    .utbe-who-bottom-label,
+    .utbe-why-bottom-label {
+        top: 580px;
+        left: 8%;
+        font-size: 7px;
+        letter-spacing: 1.5px;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .navbar {
+        gap: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .navbar a {
+        font-size: 10px;
+    }
+
+    .quantacat-dropdown-content a {
+        font-size: 11px;
+    }
+
+    .utbe-text-overlay {
+        top: 34%;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    #utbe-main-subtext {
+        font-size: 12px;
+    }
+
+    .utbe-what-text,
+    .utbe-who-text {
+        gap: 8px;
+    }
+
+    .utbe-what-portrait,
+    .utbe-who-portrait,
+    .utbe-why-portrait {
+        width: 88%;
+    }
+
+    .utbe-what-description,
+    .utbe-who-description,
+    .utbe-why-description {
+        font-size: 11px;
+    }
 }
