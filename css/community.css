@@ -1,0 +1,495 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #05050a;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 25px;
+    gap: 70px;
+}
+
+.navbar a {
+    padding-left: 30px;
+    padding-top: 15px;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+.navbar a:hover {
+    color: #780606;
+}
+
+.navbar-return {
+    margin-left: auto;
+}
+
+.quantacat-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.quantacat-dropdown-label {
+    display: block;
+    padding-top: 5px;
+    text-align: center;
+    line-height: 1.5;
+    cursor: pointer;
+    font-family: "Wallpoet", sans-serif;
+}
+
+.dropdown-arrow {
+    position: absolute;
+    transform: translate(30px, -12px);
+}
+
+.quantacat-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: -25px;
+    background-color: #000;
+    min-width: 180px;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.quantacat-dropdown:hover .quantacat-dropdown-content,
+.quantacat-dropdown:focus-within .quantacat-dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.quantacat-dropdown-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.quantacat-dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.quantacat-dropdown-content a:hover {
+    background-color: #333;
+    color: #2D68C4;
+}
+
+.community-main {
+    max-width: 900px;
+    min-height: calc(100vh - 40px);
+    margin: 0 auto;
+    padding: 140px 6% 80px;
+}
+
+.community-title {
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: "Wallpoet", sans-serif;
+    font-size: 48px;
+    letter-spacing: 4px;
+}
+
+.community-subtext {
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: "Orbitron", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.flash {
+    margin-bottom: 30px;
+    padding: 14px 18px;
+    border-left: 4px solid;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.flash-error {
+    background: #2a0a0a;
+    border-color: #780606;
+    color: #ff9aa0;
+}
+
+.flash-success {
+    background: #0c2214;
+    border-color: #2f8f4e;
+    color: #8fe38f;
+}
+
+.auth-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+.panel {
+    padding: 28px;
+    background: #16161D;
+    border-top: 3px solid #780606;
+}
+
+.panel h2 {
+    margin-bottom: 20px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.panel label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.panel input[type="text"],
+.panel input[type="password"],
+.panel textarea {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 10px 12px;
+    background: #05050a;
+    border: 1px solid #333;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.panel textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.panel input[type="text"]:focus,
+.panel input[type="password"]:focus,
+.panel textarea:focus {
+    outline: none;
+    border-color: #2D68C4;
+}
+
+.panel input[type="file"] {
+    width: 100%;
+    margin-bottom: 16px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.panel label.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: #2D68C4;
+}
+
+.panel-note {
+    margin-bottom: 16px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.button {
+    padding: 10px 22px;
+    background: #780606;
+    border: none;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background: #a00a0a;
+}
+
+.button-small {
+    padding: 8px 16px;
+    font-size: 11px;
+}
+
+.userbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    padding: 14px 20px;
+    background: #16161D;
+    border-left: 3px solid #2D68C4;
+}
+
+.role-badge {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 8px;
+    background: #2D68C4;
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.post-form {
+    margin-bottom: 50px;
+}
+
+.feed-heading {
+    margin-bottom: 20px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.empty-feed {
+    padding: 40px 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.post {
+    margin-bottom: 24px;
+    overflow: hidden;
+    background: #16161D;
+    border-top: 3px solid #333;
+}
+
+.post-developer {
+    border-top-color: #2D68C4;
+    box-shadow: 0 0 30px -14px #2D68C4;
+}
+
+.post-developer-header {
+    padding: 6px 24px;
+    background: #2D68C4;
+    font-family: "Wallpoet", sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+}
+
+.post-body {
+    padding: 20px 24px;
+}
+
+.post-title {
+    margin-bottom: 8px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 20px;
+    overflow-wrap: anywhere;
+}
+
+.post-caption {
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.post-image {
+    display: block;
+    width: 100%;
+    max-height: 420px;
+    margin-top: 16px;
+    background: #000;
+    object-fit: contain;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background: #0b0b11;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.button-delete {
+    padding: 6px 14px;
+    background: transparent;
+    border: 1px solid #780606;
+    font-size: 11px;
+    color: #ff9aa0;
+}
+
+.button-delete:hover {
+    background: #780606;
+    color: white;
+}
+
+footer {
+    padding: 7px;
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    font-size: 14px;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Wallpoet';
+    src: url('../fonts/Wallpoet.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../fonts/Orbitron.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        height: 75px;
+    }
+
+    .navbar {
+        width: 100%;
+        padding: 15px 15px 0;
+        gap: 18px;
+        align-items: flex-start;
+    }
+
+    .navbar a {
+        padding-left: 5px;
+        padding-top: 10px;
+        font-size: 11px;
+    }
+
+    .quantacat-dropdown-label {
+        padding: 5px 6px 20px;
+        font-size: 0;
+    }
+
+    .quantacat-dropdown-label::before {
+        content: "";
+        display: block;
+        width: 22px;
+        height: 2px;
+        margin: 12px auto 0;
+        background: #ffffff;
+        box-shadow: 0 -7px 0 #ffffff, 0 7px 0 #ffffff;
+    }
+
+    .dropdown-arrow {
+        display: none;
+    }
+
+    .quantacat-dropdown-content {
+        left: -10px;
+        min-width: 180px;
+    }
+
+    .community-main {
+        padding-top: 105px;
+    }
+
+    .community-title {
+        font-size: 32px;
+    }
+
+    .auth-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        padding: 20px;
+    }
+
+    .post-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer {
+        padding: 10px 15px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        height: 65px;
+    }
+
+    .navbar {
+        padding: 10px 8px 0;
+        gap: 14px;
+    }
+
+    .quantacat-dropdown-content {
+        left: -5px;
+        min-width: 160px;
+    }
+
+    .quantacat-dropdown-content a {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+
+    .community-main {
+        padding-top: 95px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+}
+
+.delete-account {
+    margin-top: 50px;
+    border-top-color: #333;
+}
+
+.delete-account summary {
+    cursor: pointer;
+    font-family: "Orbitron", sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #ff9aa0;
+}
+
+.delete-account form {
+    margin-top: 20px;
+}

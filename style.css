@@ -604,11 +604,66 @@ body {
 
 .utbe-why-text {
     position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 40px;
     top: 100px;
-    left: 20%;
+    left: 17%;
     z-index: 1;
     opacity: 0;
     transform: translateX(-100px);
+}
+
+.utbe-why-text-arrow {
+    display: inline-block;
+    animation-play-state: paused;
+}
+
+#utbe-why-right-arrow {
+    animation: why-right-arrow-indicator 1.5s ease-in-out infinite;
+}
+
+#utbe-why-left-arrow {
+    animation: why-left-arrow-indicator 1.5s ease-in-out infinite;
+}
+
+.utbe-why-text:has(.utbe-why-text-category:hover) #utbe-why-right-arrow,
+.utbe-why-text:has(.utbe-why-text-category:hover) #utbe-why-left-arrow {
+    animation-play-state: paused;
+}
+
+@keyframes why-right-arrow-indicator {
+    0% {
+        transform: translateX(-10px)
+    }
+    50% {
+        transform: translateX(0px)
+    }
+    100% {
+        transform: translateX(-10px)
+    }
+}
+
+@keyframes why-left-arrow-indicator {
+    0% {
+        transform: translateX(10px);
+    }
+    50% {
+        transform: translateX(0px)
+    }
+    100% {
+        transform: translateX(10px)
+    }
+}
+
+.utbe-why-text-category {
+    text-decoration: none;
+    color: white;
+    transition: color 0.4s ease;
+}
+
+.utbe-why-text-category:hover {
+    color: #780606;
 }
 
 .utbe-why-text.is-visible {
