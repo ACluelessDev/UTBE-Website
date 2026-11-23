@@ -1,3 +1,12 @@
+# IMPORTANT HIATUS
+As of November 23, 2006, this website is being put on indefinite hiatus. This website has always been, at the very start, a university project intended to comply with the requirements of a specific course. While I have made mention of the final website potentially being used as a way to promote and introduce the **"Until The Bleeding Edge"** videogame I am planning to work on, the main keyword is *"potentially"*. It was never confirmed it would be. And I sincerely believe it shouldn't be considering websites for videogames are generally hard to make, since websites aren't the most effective way to promote a videogame, especially indie ones.
+
+The code for the current version of this website will still remain readily available and accessible for any interested developers who wish to take inspiration or study under this website's development process. I have no plans of taking this repository down or change the licensing in any way. It is an open-source project and will remain as such.
+
+But there will be no further updates or changes to the website as my attention will be redirected towards game development projects.
+
+For what it is, this website is still a fantastic learning experience and I had a fun time making it. But as of today, this website is now on indefinite hiatus.
+
 # Briefing
 A debut website for a planned videogame I might develop in the near future titled **"Until The Bleeding Edge".**
 
